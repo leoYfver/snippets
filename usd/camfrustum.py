@@ -11,7 +11,6 @@ corners = frustum.ComputeCornersAtDistance(15)
 
 x = 0
 
-for i in corners:
+for x, corner in enumerate(corners):
         sphere = UsdGeom.Sphere.Define(stage, '/sphere'+'str(x)')
-        sphere.AddTranslateOp().Set(i)
-        x+=1
+        sphere.AddTranslateOp().Set(corner)
